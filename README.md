@@ -1,14 +1,14 @@
-# DSA for AI and ML Engineers - Canonical Labs, Interactive UI and Test Suite
+# Cracking DSA Interview Preparation for AI Engineers - Canonical Labs, Interactive UI and Test Suite
 
-[![Tests](https://img.shields.io/badge/pytest-167%20passed-brightgreen.svg)](tests/)
+[![Tests](https://img.shields.io/badge/pytest-158%20passed-brightgreen.svg)](tests/)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](pyproject.toml)
 [![Next.js](https://img.shields.io/badge/next.js-16.3-black.svg)](dsa-practice-ui/)
 [![TypeScript](https://img.shields.io/badge/typescript-5.0-blue.svg)](dsa-practice-ui/)
 [![Tailwind](https://img.shields.io/badge/tailwind-v4-38bdf8.svg)](dsa-practice-ui/)
 
-The official laboratory, interactive code playground, and testing suite for **DSA for AI & ML Engineers: From Data Structures to Scalable AI Systems**.
+The official laboratory, interactive code playground, and testing suite for **Cracking DSA Interview Preparation for AI Engineers: Coding Patterns, Algorithms, System Thinking, and Interview Preparation**.
 
-This repository bridges classical algorithmic problem solving with real-world AI infrastructure. It provides **33 structured chapters**, **150 NeetCode interview companion solutions**, **167 automated unit tests**, and a **Next.js & Monaco Editor interactive LeetCode practice platform** with live Python execution.
+This repository bridges classical algorithmic problem solving with real-world AI infrastructure. It provides **33 structured chapters**, **150 NeetCode interview companion solutions**, **158 automated unit tests**, and a **Next.js & Monaco Editor interactive LeetCode practice platform** with live Python execution.
 
 ---
 
@@ -32,7 +32,7 @@ dsa-ai-engineer-labs/
 |-- pyproject.toml               # Configured with pythonpath = ["."] for frictionless pytest
 |-- README.md                    # Unified repository documentation
 |-- dsa_labs/                    # Canonical implementations and algorithmic solutions
-|   |-- chapter_01/ ...          # Chapters 01 to 32: Core Foundations & AI Primitives
+|   |-- chapter_03/ ...          # Chapters 03 to 29: Core Foundations & AI Primitives
 |   `-- chapter_33/              # Chapter 33: NeetCode 150 Companion (18 algorithmic modules)
 |       |-- arrays_and_hashing.py
 |       |-- two_pointers.py
@@ -52,8 +52,8 @@ dsa-ai-engineer-labs/
 |       |-- intervals.py
 |       |-- math_and_geometry.py
 |       `-- bit_manipulation.py
-|-- tests/                       # 167 automated unit tests across all 33 chapters
-|   |-- test_chapter_01.py ...
+|-- tests/                       # 158 automated unit tests across all laboratory modules
+|   |-- test_chapter_03.py ...
 |   `-- test_chapter_33.py       # Comprehensive 57-case test suite covering all 150 problems
 `-- dsa-practice-ui/             # LeetCode-style interactive practice web platform
     |-- .gitignore               # UI build ignore (node_modules, .next, cache)
@@ -83,38 +83,38 @@ dsa-ai-engineer-labs/
 
 | Chapter | Topic & Focus | Core Module (`dsa_labs/`) | Key Algorithms & Structures |
 | :---: | :--- | :--- | :--- |
-| **01** | Prep Scheduler & Spaced Repetition | `chapter_01/prep_scheduler.py` | Leitner review intervals, priority scheduling |
-| **02** | Asymptotic Complexity Prober | `chapter_02/complexity_probe.py` | Empirical scaling detection, slope classification |
+| **01** | The AI Engineer's Interview Landscape | *(Conceptual Chapter in Ebook)* | The four-pillar loop, round triage, prep strategy |
+| **02** | Complexity Analysis & Real Machines | *(Conceptual Chapter in Ebook)* | Asymptotic cost vs real hardware, memory hierarchies |
 | **03** | Vector Toolkit & Cosine Top-K | `chapter_03/vector_toolkit.py` | L2 normalization, vectorized dot product, top-k |
-| **04** | LLM Sequence Batching & Arrays | `chapter_04/batching.py` | Length-bucket batcher, in-place array algorithms |
+| **04** | LLM Sequence Batching & Arrays | `chapter_04/batcher.py` | Length-bucket batcher, in-place array algorithms |
 | **05** | Context Budget & Prefix Sums | `chapter_05/context_budget.py` | Prefix sums, turn budget planning, 2D matrix sums |
-| **06** | Rolling Windows & Two Pointers | `chapter_06/rolling_window.py` | Streaming window decision engines, palindrome two-pointer |
+| **06** | Rolling Windows & Two Pointers | `chapter_06/token_bucket.py` | Rolling token bucket rate limiter, sliding window |
 | **07** | Deduplication & Hash Indexes | `chapter_07/dedup.py` | Exact deduplicator, hash sets, bucket chaining |
-| **08** | Linked Lists & KV Cache Allocation | `chapter_08/linked.py` | Doubly-linked nodes, cycle detection, k-group reversal |
+| **08** | Linked Lists & KV Cache Allocation | `chapter_08/lru.py` | Doubly-linked nodes, ordered LRU cache primitive |
 | **09** | Request Queues & Monotonic Stacks | `chapter_09/request_queue.py` | Monotonic stack, bounded queues, histogram areas |
-| **10** | Hierarchical Tree Indexing | `chapter_10/hierarchical_index.py` | Hierarchical vector space partitioning, tree traversal |
+| **10** | Hierarchical Tree Indexing | `chapter_10/centroid_index.py` | Hierarchical vector space partitioning, tree traversal |
 | **11** | Priority Queues & Beam Search | `chapter_11/beam_search.py` | Min/max heaps, top-k beam decoding for LLMs |
 | **12** | Vocabulary Tries for Tokenization | `chapter_12/vocab_trie.py` | Prefix matching, wildcard token dictionaries |
-| **13** | Disjoint Sets & Graph Clusters | `chapter_13/dedup_clusters.py` | Union-Find with rank and path compression |
+| **13** | Disjoint Sets & Graph Clusters | `chapter_13/near_dup_uf.py` | Union-Find with rank and path compression |
 | **14** | External Sorting for Large Corpora | `chapter_14/external_sort.py` | K-way external merge sort, chunked file processing |
-| **15** | Binary Search & Calibration | `chapter_15/threshold_search.py` | Logarithmic search, probability threshold tuning |
-| **16** | Interval Scheduling & Compute Slots | `chapter_16/slot_scheduler.py` | Interval intersections, non-overlapping slot allocation |
-| **17** | Divide & Conquer Tree Reductions | `chapter_17/tree_reduce.py` | Parallel tensor tree reduction, fast exponentiation |
+| **15** | Binary Search & Calibration | `chapter_15/threshold_calibration.py` | Logarithmic search, probability threshold tuning |
+| **16** | Interval Scheduling & Compute Slots | `chapter_16/admission_scheduler.py` | Interval intersections, non-overlapping slot allocation |
+| **17** | Divide & Conquer Tree Reductions | `chapter_17/tree_reducer.py` | Parallel tensor tree reduction, fast exponentiation |
 | **18** | Backtracking & Constraint Search | `chapter_18/constraint_search.py` | Bounded prompt constraint exploration, N-Queens |
 | **19** | Greedy Context Packing | `chapter_19/context_packing.py` | Knapsack approximations, greedy window chunking |
-| **20** | Dynamic Programming & Tokenizer | `chapter_20/viterbi_tokenizer.py` | Viterbi path decoding, unigram token probability DP |
-| **21** | Bit Manipulation & Quantization | `chapter_21/quantization.py` | Int8/Int4 fixed-point scaling, bitmask SIMD tricks |
-| **22** | Workflow Graphs & Traversal | `chapter_22/workflow_graph.py` | Breadth-First & Depth-First agent step dispatch |
+| **20** | Dynamic Programming & Tokenizer | `chapter_20/subword_tokenization.py` | Viterbi path decoding, unigram token probability DP |
+| **21** | Bit Manipulation & Quantization | `chapter_21/int4_quantization.py` | Int8/Int4 fixed-point scaling, bitmask SIMD tricks |
+| **22** | Workflow Graphs & Traversal | `chapter_22/agent_workflow.py` | Breadth-First & Depth-First agent step dispatch |
 | **23** | DAG Pipeline Execution | `chapter_23/dag_executor.py` | Topological sort, dependency resolution, concurrency |
-| **24** | String Matching & Near-Duplicates | `chapter_24/near_duplicates.py` | Rabin-Karp polynomial rolling hash, MinHash shingles |
+| **24** | String Matching & Near-Duplicates | `chapter_24/near_duplicate.py` | Rabin-Karp polynomial rolling hash, MinHash shingles |
 | **25** | Fenwick Trees & Weighted Sampling | `chapter_25/weighted_sampler.py` | Binary Indexed Trees (BIT), prefix probability sampler |
 | **26** | Streaming Summaries & HyperLogLog | `chapter_26/stream_summary.py` | HyperLogLog cardinalities, reservoir stream sampling |
-| **27** | Mathematical ML Primitives | `chapter_27/ml_primitives.py` | Sigmoid, Logistic Regression, Scaled Dot-Product Attention |
-| **28** | Vector Search: NSW & HNSW | `chapter_28/ann_index.py` | Navigable Small World vector graphs, ANN lookups |
+| **27** | Mathematical ML Primitives | `chapter_27/ml_toolkit.py` | Attention, Softmax, K-Means from scratch in NumPy |
+| **28** | Vector Search: NSW & HNSW | `chapter_28/nsw_decoder.py` | Navigable Small World vector graphs, ANN lookups |
 | **29** | Semantic Inference Cache & Rate Limits | `chapter_29/inference_cache.py` | Vector-similarity caching, Token Bucket rate limiting |
-| **30** | Pattern Triage & Signal Matcher | `chapter_30/triage.py` | Problem taxonomy mapping, algorithmic signal extractor |
-| **31** | Interview Protocol & Telemetry | `chapter_31/protocol.py` | Live interview stage rubrics, time-boxed milestones |
-| **32** | AI Engineering Rubric & Reporting | `chapter_32/rubric.py` | Multi-dimensional scoring (Correctness, Scale, ML) |
+| **30** | The Pattern Recognition Playbook | *(Strategy Chapter in Ebook)* | 20 Coding patterns, constraint ladder, signal triage |
+| **31** | The Coding Interview Protocol | *(Strategy Chapter in Ebook)* | 11-Step live interview protocol, trade-off communication |
+| **32** | Mock Interview Simulations | *(Strategy Chapter in Ebook)* | 4 Full loop transcripts, rubric scoring, failure recovery |
 | **33** | **NeetCode 150 Companion** | `chapter_33/` (18 modules) | Complete 150 LeetCode solutions with 5-step framework |
 
 ---
@@ -198,7 +198,7 @@ npm run start
 
 Every lab implementation and algorithmic solution is validated with comprehensive unit tests.
 
-### Running All 167 Tests
+### Running All 158 Tests
 ```bash
 # From repository root
 pytest
@@ -206,12 +206,12 @@ pytest
 
 Output:
 ```
-collected 167 items
-tests/test_chapter_01.py ..                                              [  1%]
+collected 158 items
+tests/test_chapter_03.py ..                                              [  1%]
 ...
 tests/test_chapter_33.py ............................................... [ 94%]
 ..........                                                               [100%]
-============================= 167 passed in 0.25s ==============================
+============================= 158 passed in 0.28s ==============================
 ```
 
 ### Running Specific Chapters
