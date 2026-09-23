@@ -18,16 +18,9 @@ This repository bridges classical algorithmic problem solving with real-world AI
 2. [Complete Chapter Index (Chapters 01-33)](#complete-chapter-index-chapters-01-33)
 3. [Chapter 33: NeetCode 150 Interview Companion](#chapter-33-neetcode-150-interview-companion)
 4. [Interactive Practice UI (dsa-practice-ui)](#interactive-practice-ui-dsa-practice-ui)
-   - [UI Features & Layout](#ui-features--layout)
-   - [Adaptive Challenge Countdown Timer](#adaptive-challenge-countdown-timer)
-   - [Monaco Python Code Editor](#monaco-python-code-editor)
-   - [Safe Subprocess Execution Engine](#safe-subprocess-execution-engine)
-   - [Component Architecture](#component-architecture)
-   - [Quickstart Guide](#quickstart-guide)
 5. [Automated Unit Testing & Pytest Suite](#automated-unit-testing--pytest-suite)
-6. [5-Step DSA Engineering Framework](#5-step-dsa-engineering-framework)
-7. [Installation and Setup](#installation-and-setup)
-8. [Code Standards and Verification](#code-standards-and-verification)
+6. [Installation and Setup](#installation-and-setup)
+7. [Code Standards and Verification](#code-standards-and-verification)
 
 ---
 
@@ -158,56 +151,6 @@ All 150 problems are implemented under `dsa_labs/chapter_33/` with clean typing,
 
 The repository includes a modern Next.js application that simulates the official LeetCode practice experience. It is located at `dsa-ai-engineer-labs/dsa-practice-ui`.
 
-### UI Features & Layout
-
-1. **Split-Pane LeetCode Dark Theme**:
-   - **Left Column**: Problem description, constraints, input/output example cards, category badges, company tags, and direct LeetCode links.
-   - **5-Step Editorial Tab**: Structured analysis breaking down the requirements, brute force baseline, optimal algorithm, Big-O complexity, and production Python reference solution with a 1-click copy button.
-   - **Submissions Tab**: Tracks test pass history and runtime metrics for the active session.
-   - **Top Navigation Bar**: Problem List drawer launcher, Prev/Next problem navigator, challenge countdown timer, and Run (`Cmd/Ctrl + Enter`) / Submit buttons.
-
-2. **Problem Browser Drawer**:
-   - Modal drawer to browse all 150 problems.
-   - Real-time search by title, LeetCode number, algorithmic pattern, or category.
-   - Filter dropdown across all 18 categories and 3 difficulty tiers (Easy / Medium / Hard).
-   - Live counter tracking completed vs total problems.
-
-### Adaptive Challenge Countdown Timer
-
-The application includes an adaptive countdown timer tailored to user experience level and problem difficulty:
-
-| Challenge Tier | Target Focus | Easy | Medium | Hard |
-| :--- | :--- | :---: | :---: | :---: |
-| **Beginner** | Just starting out | 30 min | 45 min | 60 min (1h) |
-| **Intermediate** | Pattern mastery and optimal approaches | 20 min | 35 min | 50 min |
-| **Advanced / Interview Ready** | Consistent practice and interview speed | 15 min | 25 min | 45 min |
-| **Stopwatch Mode** | Free practice with no time limits | Count Up | Count Up | Count Up |
-
-Timer features:
-- **Automatic Adjustment**: Switching problems detects the difficulty tier and restarts the timer with the corresponding duration.
-- **Urgency Alerts**: Font color transitions from neutral white to amber (< 3 min) and pulsing red (< 1 min).
-- **Web Audio Chimes**: Generates built-in warning and expiration audio tones using browser-native Web Audio (zero external network assets required, fully offline compatible). Includes a 1-click mute toggle.
-- **Controls**: Pause, resume, reset, and a quick `+5m` extension button.
-- **Time's Up Banner**: When time expires, a banner prompts the user with a 1-click button to view the 5-step editorial solution.
-
-### Monaco Python Code Editor
-
-- **Engine**: `@monaco-editor/react` with VS-Dark theme.
-- **Features**: Python 3 syntax highlighting, automatic indentation, bracket matching, line numbers, and smooth scrolling.
-- **Persistence**: Code edits for each problem are saved to `localStorage` automatically, ensuring user code is never lost when navigating between problems or refreshing.
-- **Shortcuts**: `Cmd + Enter` (macOS) or `Ctrl + Enter` (Windows/Linux) triggers instant evaluation.
-
-### Safe Subprocess Execution Engine
-
-Code is evaluated via a safe Node.js subprocess endpoint (`/api/run`) calling `lib/runner.py`:
-- **Timeout Protection**: 4.0-second safety cutoff prevents infinite loops.
-- **Multiple Calling Formats**: Automatically executes solutions written as LeetCode classes (`class Solution: def method(self, ...)`), standalone functions (`def method(...)`), or object-oriented design classes (`MinStack`, `LRUCache`, `Trie`, `MedianFinder`, etc.).
-- **Smart Signature Adaptation**: Handles functions whether `self` was included or omitted.
-- **Order-Insensitive Matching**: Handles problems where output ordering is arbitrary (e.g., Two Sum indices `[0, 1]` or `[1, 0]`, 3Sum triplets, Subsets, and Group Anagrams).
-- **Semantic Two Sum Verification**: Validates Two Sum by checking array bounds and checking if `nums[i] + nums[j] == target` with `i != j`.
-- **Feedback Metrics**: Status badges (**Accepted**, **Wrong Answer**, **Compile Error**, **Runtime Error**, **Time Limit Exceeded**), millisecond execution runtime, and full traceback reporting.
-- **Console Stdout Capture**: Any `print(...)` statements executed inside user code are captured and displayed in the terminal output tab.
-
 ### Component Architecture
 
 ```
@@ -220,7 +163,7 @@ dsa-practice-ui/
 |-- components/
 |   |-- CodeEditor.tsx        # Monaco editor component with Python configuration
 |   |-- ConsoleTabs.tsx       # Bottom-right testcase & result inspection console
-|   |-- CountdownTimer.tsx    # Adaptive challenge countdown timer
+|   |-- CountdownTimer.tsx    # Problem countdown and stopwatch timer
 |   |-- Navbar.tsx            # Top header with timer, problem switcher, and Run/Submit
 |   |-- ProblemDescription.tsx# Problem description, constraints & 5-step editorial
 |   `-- ProblemModal.tsx      # Searchable & filterable 150-problem drawer modal
@@ -279,23 +222,6 @@ pytest tests/test_chapter_33.py -v
 # Test Specialized AI Primitives (Vector Search, Attention, Inference Cache)
 pytest tests/test_chapter_03.py tests/test_chapter_27.py tests/test_chapter_28.py tests/test_chapter_29.py
 ```
-
----
-
-## 5-Step DSA Engineering Framework
-
-Every algorithmic solution in the book and editorial follows the **5-Step System**:
-
-1. **Step 1: Clarify Requirements & Constraints**:
-   - Identify input types, memory bounds, element value ranges, and edge cases (empty collections, singletons, negative values, duplicates).
-2. **Step 2: Brute Force Baseline**:
-   - Formulate the naive solution (e.g., exhaustive search or nested loops) to establish time and space baselines.
-3. **Step 3: Optimal Strategy & Algorithm**:
-   - Leverage data structure invariants (hash tables, monotonic stacks, binary search, two pointers, dynamic programming) to reduce complexity.
-4. **Step 4: Complexity Analysis**:
-   - State asymptotic Big-O Time and Space bounds with mathematical justification.
-5. **Step 5: Production Python Implementation**:
-   - Clean, typed, edge-case-hardened code adhering to PEP 8 standards.
 
 ---
 
