@@ -10,7 +10,11 @@ The official laboratory, interactive code playground, and testing suite for **Cr
 
 This repository bridges classical algorithmic problem solving with real-world AI infrastructure. It provides **33 structured chapters**, **150 NeetCode interview companion solutions**, **158 automated unit tests**, and a **Next.js & Monaco Editor interactive LeetCode practice platform** with live Python execution.
 
----
+<img width="1241" height="1754" alt="preview-dsa_page-0001" src="https://github.com/user-attachments/assets/437ff2f7-97c2-43a8-988f-484c083ef95a" />
+
+Preview: https://drive.google.com/file/d/17mMovCMTSU7LCNAdHJSjWJ_xMF98xUMq/view?usp=sharing
+
+Book link: https://shop.beacons.ai/aiengineeringinsider/5eaa7203-aa97-49b2-ab39-4acca1939a01
 
 ## Table of Contents
 
